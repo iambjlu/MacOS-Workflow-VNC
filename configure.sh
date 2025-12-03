@@ -106,7 +106,9 @@ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 sudo ln -s ~ ~/Desktop/Home
+sudo ln -s / ~/Desktop/Macintosh\ HD
 sudo ln -s /Users/vncuser /Users/vncuser/Desktop/Home
+sudo ln -s /Users/vncuser /Users/vncuser/Desktop/Macintosh\ HD
 killall Finder
 
 # 1. 停止服務
