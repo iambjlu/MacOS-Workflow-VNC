@@ -21,6 +21,7 @@ sudo rm -rf /.Spotlight-V100/*
 rm -rf ~/Library/Metadata/CoreSpotlight/ || true
 killall -KILL Spotlight spotlightd mds || true
 sudo rm -rf /System/Volums/Data/.Spotlight-V100 || true
+cp -R /Users/runner/work/MacOS-Workflow-VNC/MacOS-Workflow-VNC/PersonalData /Users/Shared
 brew install --cask keka
 ' >/dev/null 2>&1 &
 
