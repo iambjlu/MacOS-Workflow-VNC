@@ -103,15 +103,16 @@ VNC_PWD="$VNC_PASSWORD"
 
 sudo defaults write /Library/Preferences/com.apple.universalaccess reduceTransparency -bool false
 sudo defaults write /Library/Preferences/com.apple.universalaccess reduceMotion -bool true
+sudo defaults write /Library/Preferences/com.apple.dock launchanim -bool false
 killall Dock
 sudo defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 sudo defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 sudo defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 killall Finder
 sudo ln -s / ~/Desktop/Macintosh\ HD
-sudo ln -s ~ ~/Desktop/Home
+sudo ln -s ~ ~/Desktop/Users
 sudo ln -s / /Users/vncuser/Desktop/Macintosh\ HD
-sudo ln -s /Users/vncuser /Users/vncuser/Desktop/Home
+sudo ln -s /Users/ /Users/vncuser/Users
 
 open -a Terminal && sleep 1 && osascript -e 'tell application "Terminal" to quit'
 osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
