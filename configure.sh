@@ -107,10 +107,17 @@ sudo defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 sudo defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 sudo defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 killall Finder
-sudo ln -s ~ ~/Desktop/Home
 sudo ln -s / ~/Desktop/Macintosh\ HD
-sudo ln -s /Users/vncuser /Users/vncuser/Desktop/Home
+sudo ln -s ~ ~/Desktop/Home
 sudo ln -s / /Users/vncuser/Desktop/Macintosh\ HD
+sudo ln -s /Users/vncuser /Users/vncuser/Desktop/Home
+
+sudo launchctl asuser $(id -u vncuser) \
+defaults write -g AppleLanguages -array "zh-Hant-TW" "en-US"
+
+sudo touch /var/db/.AppleSetupDone
+sudo chmod 644 /var/db/.AppleSetupDone
+sudo chown root:wheel /var/db/.AppleSetupDone
 
 
 # 1. 停止服務
