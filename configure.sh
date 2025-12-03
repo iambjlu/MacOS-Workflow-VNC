@@ -149,22 +149,35 @@ sudo brew services start tailscale
 
 # 6. 登入並配置# --ssh: 順便開啟 Tailscale SSH 功能，以後 SSH 更方便# --accept-routes: 如你有設 Subnet Router 這很有用
 sudo tailscale up --authkey "$TS_KEY"
-echo "--- VM IP ----"
-tailscale ip
+
 echo "----- VNC ----"
-echo "User: vncuser"
-echo "Password: Your VNC_USER_PASSWORD"
-echo "--------------"
+echo "Apple Screen Sharing: Choose [Share Display] to use [runner] account or login as [vncuser]."
+echo "Third party VNC (and noVNC) software might have an experience that's not good and only can login as [vncuser]"
+echo "Apple 螢幕共享: 選擇 [共用顯示器] 以使用 [runner] 帳號，或使用 [vncuser] 登入。"
+echo "第三方VNC軟體(含noVNC)只能使用[vncuser]且體驗可能較差"
+echo "- Login Info -"
+echo "IP: $(tailscale ip -4)"
+echo "使用者User: vncuser"
+echo "密碼Password: Your VNC_USER_PASSWORD"
+echo "SSH: vncuser@$(tailscale ip -4)"
+echo "-------------"
+
 echo "Installing noVNC..."
 pip install websockify
 cd ~
 git clone https://github.com/iambjlu/noVNC.git
 cd ~/noVNC;nohup websockify --web . --cert self.crt --key self.key 6080 localhost:5900 >/dev/null 2>&1 &
-echo "--- VM IP ----"
-tailscale ip
+
 echo "----- VNC ----"
-echo "User: vncuser"
-echo "Password: Your VNC_USER_PASSWORD"
+echo "Apple Screen Sharing: Choose [Share Display] to use [runner] account or login as [vncuser]."
+echo "Third party VNC (and noVNC) software might have an experience that's not good and only can login as [vncuser]"
+echo "Apple 螢幕共享: 選擇 [共用顯示器] 以使用 [runner] 帳號，或使用 [vncuser] 登入。"
+echo "第三方VNC軟體(含noVNC)只能使用[vncuser]且體驗可能較差"
+echo "- Login Info -"
+echo "IP: $(tailscale ip -4)"
+echo "使用者User: vncuser"
+echo "密碼Password: Your VNC_USER_PASSWORD"
+echo "SSH: vncuser@$(tailscale ip -4)"
 echo "--- noVNC ---"
 echo "https://$(tailscale ip -4):6080/vnc.html"
 echo "-------------"
@@ -191,11 +204,17 @@ rm -rf "$HOME/.cache"
 echo "🚀 啟動 code-server..."
 nohup code-server >/dev/null 2>&1 &
 
-echo "--- VM IP ----"
-tailscale ip
+
 echo "----- VNC ----"
-echo "User: vncuser"
-echo "Password: Your VNC_USER_PASSWORD"
+echo "Apple Screen Sharing: Choose [Share Display] to use [runner] account or login as [vncuser]."
+echo "Third party VNC (and noVNC) software might have an experience that's not good and only can login as [vncuser]"
+echo "Apple 螢幕共享: 選擇 [共用顯示器] 以使用 [runner] 帳號，或使用 [vncuser] 登入。"
+echo "第三方VNC軟體(含noVNC)只能使用[vncuser]且體驗可能較差"
+echo "- Login Info -"
+echo "IP: $(tailscale ip -4)"
+echo "使用者User: vncuser"
+echo "密碼Password: Your VNC_USER_PASSWORD"
+echo "SSH: vncuser@$(tailscale ip -4)"
 echo "--- noVNC ---"
 echo "https://$(tailscale ip -4):6080/vnc.html"
 echo "-code-server-"
