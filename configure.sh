@@ -101,7 +101,7 @@ except Exception as e:
 echo "🔄 Restarting Remote Management to apply TCC changes..."
 VNC_PWD="$VNC_PASSWORD"
 
-sudo defaults write /Library/Preferences/com.apple.universalaccess reduceTransparency -bool true
+sudo defaults write /Library/Preferences/com.apple.universalaccess reduceTransparency -bool false
 sudo defaults write /Library/Preferences/com.apple.universalaccess reduceMotion -bool true
 killall Dock
 sudo defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
