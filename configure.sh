@@ -119,6 +119,9 @@ sudo touch /var/db/.AppleSetupDone
 sudo chmod 644 /var/db/.AppleSetupDone
 sudo chown root:wheel /var/db/.AppleSetupDone
 
+open -a Terminal && sleep 1 && osascript -e 'tell application "Terminal" to quit'
+osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
+open /System/Library/PreferencePanes/Displays.prefPane
 
 # 1. 停止服務
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -configure -access -off
@@ -171,8 +174,6 @@ echo "Password: Your VNC_USER_PASSWORD"
 echo "--- noVNC ---"
 echo "https://$(tailscale ip -4):6080/vnc.html"
 echo "-------------"
-open -a Terminal && sleep 1 && osascript -e 'tell application "Terminal" to quit'
-osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
-open /System/Library/PreferencePanes/Displays.prefPane
+
 # 7. 開啟 Funnel
 sudo tailscale funnel 8080
