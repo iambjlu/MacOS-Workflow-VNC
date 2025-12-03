@@ -189,6 +189,7 @@ password: $1
 EOF
 rm -rf "$HOME/.cache"
 echo "🚀 啟動 code-server..."
+nohup code-server >/dev/null 2>&1 &
 
 echo "--- VM IP ----"
 tailscale ip
