@@ -130,10 +130,7 @@ sudo dseditgroup -o edit -a "$(whoami)" -t user com.apple.access_screensharing
 echo "🚀 Ready to connect!"
 echo "🖥️ Screen Sharing enabled."
 echo "使用螢幕共享時，帳號 [vncuser] || Apple Screen Sharing User [vncuser]"
-pip install websockify
-cd ~
-git clone https://github.com/iambjlu/noVNC.git
-cd ~/noVNC;nohup websockify --web . --cert self.crt --key self.key 6080 localhost:5900 >/dev/null 2>&1 &
+
 
 #VNC password - http://hints.macworld.com/article.php?story=20071103011608872
 echo $2 | perl -we 'BEGIN { @k = unpack "C*", pack "H*", "1734516E8BA8C5E2FF1C39567390ADCA"}; $_ = <>; chomp; s/^(.{8}).*/$1/; @p = unpack "C*", $_; foreach (@k) { printf "%02X", $_ ^ (shift @p || 0) }; print "\n"' | sudo tee /Library/Preferences/com.apple.VNCSettings.txt
@@ -153,6 +150,18 @@ tailscale ip
 echo "----- VNC ----"
 echo "User: vncuser"
 echo "Password: Your VNC_USER_PASSWORD"
+echo "--------------"
+echo "Installing noVNC..."
+pip install websockify
+cd ~
+git clone https://github.com/iambjlu/noVNC.git
+cd ~/noVNC;nohup websockify --web . --cert self.crt --key self.key 6080 localhost:5900 >/dev/null 2>&1 &
+echo "--- VM IP ----"
+tailscale ip
+echo "----- VNC ----"
+echo "User: vncuser"
+echo "Password: Your VNC_USER_PASSWORD"
+echo "--- noVNC ---"
 echo "https://$(tailscale ip -4):6080/vnc.html"
 echo "-------------"
 open -a Terminal && sleep 1 && osascript -e 'tell application "Terminal" to quit'
