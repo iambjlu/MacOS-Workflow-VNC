@@ -100,16 +100,18 @@ except Exception as e:
 echo "🔄 Restarting Remote Management to apply TCC changes..."
 VNC_PWD="$VNC_PASSWORD"
 
-defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write /Library/Preferences/com.apple.universalaccess reduceTransparency -bool true
+defaults write /Library/Preferences/com.apple.universalaccess reduceMotion -bool true
 killall Dock
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
+killall Finder
 sudo ln -s ~ ~/Desktop/Home
 sudo ln -s / ~/Desktop/Macintosh\ HD
 sudo ln -s /Users/vncuser /Users/vncuser/Desktop/Home
-sudo ln -s /Users/vncuser /Users/vncuser/Desktop/Macintosh\ HD
-killall Finder
+sudo ln -s / /Users/vncuser/Desktop/Macintosh\ HD
+
 
 # 1. 停止服務
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -configure -access -off
@@ -150,7 +152,7 @@ echo "--- VM IP ----"
 tailscale ip
 echo "----- VNC ----"
 echo "User: vncuser"
-echo "Password: Your [VNC_USER_PASSWORD]"
+echo "Password: Your VNC_USER_PASSWORD"
 echo "https://$(tailscale ip -4):6080/vnc.html"
 echo "-------------"
 open -a Terminal && sleep 1 && osascript -e 'tell application "Terminal" to quit'
