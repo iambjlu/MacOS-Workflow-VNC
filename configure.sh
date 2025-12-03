@@ -199,7 +199,8 @@ echo "Password: Your VNC_USER_PASSWORD"
 echo "--- noVNC ---"
 echo "https://$(tailscale ip -4):6080/vnc.html"
 echo "-code-server-"
-echo "https://$(tailscale ip -4):8181"
+echo "runner: https://$(tailscale ip -4):8181/?folder=/Users/runner"
+echo "vncuser: https://$(tailscale ip -4):8181/?folder=/Users/vncuser"
 echo "-------------"
 
 # 7. 開啟 Funnel
