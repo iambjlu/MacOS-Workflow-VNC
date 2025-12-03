@@ -112,13 +112,6 @@ sudo ln -s ~ ~/Desktop/Home
 sudo ln -s / /Users/vncuser/Desktop/Macintosh\ HD
 sudo ln -s /Users/vncuser /Users/vncuser/Desktop/Home
 
-sudo launchctl asuser $(id -u vncuser) \
-defaults write -g AppleLanguages -array "zh-Hant-TW" "en-US"
-
-sudo touch /var/db/.AppleSetupDone
-sudo chmod 644 /var/db/.AppleSetupDone
-sudo chown root:wheel /var/db/.AppleSetupDone
-
 open -a Terminal && sleep 1 && osascript -e 'tell application "Terminal" to quit'
 osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
 open /System/Library/PreferencePanes/Displays.prefPane
