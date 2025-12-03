@@ -169,5 +169,37 @@ echo "--- noVNC ---"
 echo "https://$(tailscale ip -4):6080/vnc.html"
 echo "-------------"
 
+echo "💻 安裝 code-server..."
+bash -c '
+curl -fsSL https://code-server.dev/install.sh | sh
+mkdir -p "$HOME/.certs"
+cd "$HOME/.certs"
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -keyout code-server.key \
+  -out code-server.crt \
+  -subj "/C=TW/ST=Taiwan/L=Taipei/O=Dev/OU=Dev/CN=code-server"'
+echo "⚙️ 寫入 code-server 設定..."
+mkdir -p "$HOME/.config/code-server"
+cat > "$HOME/.config/code-server/config.yaml" <<EOF
+bind-addr: 0.0.0.0:8181
+cert: $HOME/.certs/code-server.crt
+cert-key: $HOME/.certs/code-server.key
+auth: password
+password: $1
+EOF
+rm -rf "$HOME/.cache"
+echo "🚀 啟動 code-server..."
+
+echo "--- VM IP ----"
+tailscale ip
+echo "----- VNC ----"
+echo "User: vncuser"
+echo "Password: Your VNC_USER_PASSWORD"
+echo "--- noVNC ---"
+echo "https://$(tailscale ip -4):6080/vnc.html"
+echo "-code-server-"
+echo "https://$(tailscale ip -4):8181"
+echo "-------------"
+
 # 7. 開啟 Funnel
 sudo tailscale funnel 8080
