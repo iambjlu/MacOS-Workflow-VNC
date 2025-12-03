@@ -151,6 +151,8 @@ sudo brew services start tailscale
 # 6. 登入並配置# --ssh: 順便開啟 Tailscale SSH 功能，以後 SSH 更方便# --accept-routes: 如你有設 Subnet Router 這很有用
 sudo tailscale up --authkey "$TS_KEY"
 
+sudo scutil --set HostName "Mac-$(sw_vers -productVersion | cut -d. -f1)-$( [ "$(uname -m)" = "arm64" ] && echo M1 || echo Intel )-ip-$(tailscale ip -4 | tr '.' '-')"
+
 echo "----- VNC ----"
 echo "Apple Screen Sharing: Choose [Share Display] to use [runner] account or login as [vncuser]."
 echo "Third party VNC (and noVNC) software might have an experience that's not good and only can login as [vncuser]"
