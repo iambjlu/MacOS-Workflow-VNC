@@ -152,6 +152,8 @@ sudo brew services start tailscale
 sudo tailscale up --authkey "$TS_KEY"
 
 sudo scutil --set HostName "Mac-$(sw_vers -productVersion | cut -d. -f1)-$( [ "$(uname -m)" = "arm64" ] && echo M1 || echo Intel )-ip-$(tailscale ip -4 | tr '.' '-')"
+sudo scutil --set LocalHostName "Mac-$(sw_vers -productVersion | cut -d. -f1)-$( [ "$(uname -m)" = "arm64" ] && echo M1 || echo Intel )-ip-$(tailscale ip -4 | tr '.' '-')"
+sudo scutil --set ComputerName "Mac-$(sw_vers -productVersion | cut -d. -f1)-$( [ "$(uname -m)" = "arm64" ] && echo M1 || echo Intel )-ip-$(tailscale ip -4 | tr '.' '-')"
 
 echo "----- VNC ----"
 echo "Apple Screen Sharing: Choose [Share Display] to use [runner] account or login as [vncuser]."
