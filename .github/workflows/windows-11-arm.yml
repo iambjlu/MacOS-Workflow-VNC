@@ -1,4 +1,4 @@
-name: Windows-Server-RDP
+name: Windows-11-arm
 
 on:
   workflow_dispatch:
