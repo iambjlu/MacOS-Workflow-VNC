@@ -66,17 +66,19 @@ Get Tailscale Key<br>
 
 ### macOS執行個體 macOS Instance
 <pre>
-對於Mac使用者，使用「螢幕共享」(內建的)連線<br>
-For macOS user, use Screen Sharing to connect<br>
+對於Mac使用者，使用「螢幕共享」(內建的)連線
+For macOS user, use Screen Sharing to connect
 
-對於Windows使用者，使用VNC Viewer連線<br>
-For Windows user, use VNC Viewer to connect<br>
+對於Windows使用者，使用VNC Viewer連線
+For Windows user, use VNC Viewer to connect
+    
+不建議使用檔案保險箱，這可能會拖累效能
+Enabling FileVault is not recommended
 
-不建議使用檔案保險箱，這可能會拖累效能<br>
-Enabling FileVault is not recommended<br>
+如果任何應用程式需要管理員權限，使用vncuser帳號(和先前建立的密碼)登入
+If sudo needed, login as vncuser (and its password)
 
-如果任何應用程式需要管理員權限，使用vncuser帳號(和先前建立的密碼)登入<br>
-If sudo needed, login as vncuser (and its password)<br>
+*Mac (特別是macOS 14)的效能相對良好，也很適合使用JetBrains Toolbox或是VS Code進行SSH連入遠端開發
 </pre>
 
 ### Windows執行個體 Windows Instance
