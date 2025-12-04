@@ -115,12 +115,14 @@ Funnel on 8080 port is also enabled<br>
 ## Benchmark Assessment 效能評估
 
 Geekbench 6<br>
+<img width="1039" height="534" alt="image" src="https://github.com/user-attachments/assets/3365d258-aec7-49a7-b231-66568873555e" />
 
 
 
 [Xcode Benchmark 16~26 Compatible Version](https://github.com/devMEremenko/XcodeBenchmark/tree/e3210b662a33b3041ee8ccb079b82a988cec21ba)
 <br>
-<img width="1161" height="454" alt="image" src="https://github.com/user-attachments/assets/53452343-48d5-4600-a5cd-bd8bfc37fe36" />
+<img width="1177" height="1027" alt="image" src="https://github.com/user-attachments/assets/fa22eb8f-dd89-4355-8bd3-90d176c1e9d1" />
+
 
 <hr />
 
