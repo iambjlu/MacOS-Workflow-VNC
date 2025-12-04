@@ -57,6 +57,7 @@ jobs:
               Write-Error "User creation failed"
               exit 1
           }
+          $R='Software\Microsoft\Windows\CurrentVersion\Themes\Personalize';gci 'Registry::HKEY_USERS'|?{$_.Name -match 'S-1-5-21' -and $_.Name -notmatch '_Classes$'}|%{$p="Registry::$($_.Name)\$R";if(-not(Test-Path $p)){ni $p -Force|Out-Null};sp $p AppsUseLightTheme 0 -Type DWord;sp $p SystemUsesLightTheme 0 -Type DWord};reg load HKU\D "$env:SystemDrive\Users\Default\NTUSER.DAT"|Out-Null;$p='Registry::HKEY_USERS\D\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize';if(-not(Test-Path $p)){ni $p -Force|Out-Null};sp $p AppsUseLightTheme 0 -Type DWord;sp $p SystemUsesLightTheme 0 -Type DWord;reg unload HKU\D|Out-Null;Stop-Process -Name explorer -Force
 
       - name: Install Tailscale
         run: |
