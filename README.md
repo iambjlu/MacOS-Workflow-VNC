@@ -116,8 +116,10 @@ Funnel on 8080 port is also enabled<br>
 
 ## Benchmark Assessment 效能評估
 
-Geekbench 6<br>
-<img width="1039" height="534" alt="image" src="https://github.com/user-attachments/assets/3365d258-aec7-49a7-b231-66568873555e" />
+[Geekbench 6](https://www.geekbench.com/)<br>
+<img width="1037" height="38" alt="image" src="https://github.com/user-attachments/assets/1f3b09be-4538-4622-b136-2d5d1f099433" />
+<img width="1039" height="605" alt="image" src="https://github.com/user-attachments/assets/ad1a8dc7-5a8d-42b3-a8c6-37933bf77c3b" />
+
 
 
 
