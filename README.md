@@ -128,6 +128,11 @@ Funnel on 8080 port is also enabled<br>
 <img width="1177" height="1027" alt="image" src="https://github.com/user-attachments/assets/fa22eb8f-dd89-4355-8bd3-90d176c1e9d1" />
 
 
+<img width="793" height="391" alt="截圖 2025-12-09 06 12 14" src="https://github.com/user-attachments/assets/fcc55525-1640-4d27-b0b6-a6422503997e" />
+<img width="832" height="319" alt="截圖 2025-12-09 06 20 36" src="https://github.com/user-attachments/assets/d028045a-fb8c-42b3-b3f9-c323c9aaa369" />
+
+
+
 <hr />
 
 ### 進階用法 Advanced:<br>
