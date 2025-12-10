@@ -35,7 +35,8 @@ echo "---------------"
 
 
 sudo hostnamectl set-hostname "ubuntu-$(hostname)"
-
+sudo apt update
+sudo apt install unzip
 
 echo "安裝Tailscale..."
 bash -c 'curl -fsSL https://tailscale.com/install.sh | sh'
