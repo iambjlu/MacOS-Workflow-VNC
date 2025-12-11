@@ -43,7 +43,7 @@ bash -c 'curl -fsSL https://tailscale.com/install.sh | sh'
 echo "🚀 啟動 Tailscale service..."
 sudo systemctl enable --now tailscaled
 echo "⏳ 等待 Tailscale 服務啟動中..."
-sudo tailscale up --authkey "$TS_KEY" --ssh
+sudo tailscale up --authkey "$TS_KEY"
 echo "---------"
 echo "✅ 建立完成"
 echo "使用者名稱Username: runner"
