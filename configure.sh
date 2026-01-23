@@ -106,6 +106,7 @@ VNC_PWD="$VNC_PASSWORD"
 sudo defaults write /Library/Preferences/com.apple.universalaccess reduceTransparency -bool true
 sudo defaults write /Library/Preferences/com.apple.universalaccess reduceMotion -bool true
 sudo defaults write /Library/Preferences/com.apple.dock launchanim -bool false
+sudo defaults write com.apple.dock mineffect -string scale
 killall Dock
 sudo defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 sudo defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
