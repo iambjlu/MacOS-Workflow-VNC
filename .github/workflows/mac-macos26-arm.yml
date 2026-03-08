@@ -1,4 +1,4 @@
-name: mac-macos26
+name: mac-macos26-arm
 on: 
   workflow_dispatch:
 defaults:
